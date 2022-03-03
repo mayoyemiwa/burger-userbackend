@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>mymessage</title>
+    <style type="text/css">
+     .body{width:100%; background-color:rgba(170, 160, 160, 0.863); margin:auto center;}
+     .verified{width: 450px; height:400px; margin:100px auto; align-content: center; border-radius: 30px; background-color:rgb(16, 238, 153); border: 2px rgb(21, 241, 40) solid;}
+     .h2{text-align: center; margin: 30px auto;}
+     .verified2{width:100px; height: 60px; border-radius: 50px; background-color: brown; padding-top:40px; text-align: center; color: antiquewhite; margin: auto;}
+     .image{margin: auto; margin-top: 40px; width: 50px;}
+     .imgStyle{width: 50px; margin: auto;}
+     .pdiv{text-align:center; margin: auto;}
+     .a{display: block; text-align:center; }
+     .h1div{width: 500px; margin: auto;margin-top: 100px; border: 5px rgba(128, 79, 115, 0.178) solid; border-radius: 10px;}
+     .h1{text-align: center;}
+    </style>
+</head>
+<body>
+    <script>
+        const queryString = window.location.search;
+        console.log(queryString)
+        const urlParams = new URLSearchParams(queryString);
+        const error = urlParams.get("error");
+        let message = urlParams.get('message');
+
+    const body = document.querySelector('body'); 
+    const h1 = document.createElement("h1")
+    const hbode = document.createElement("b");   
+        body.className = "body"   
+
+        if(error){
+            message = message.toUpperCase();
+            const div = document.createElement("div");
+            div.className = "h1div";
+            h1.className = "h1";
+            hbode.appendChild(document.createTextNode(message));
+            h1.appendChild(hbode)
+            div.appendChild(h1);
+            body.appendChild(div)
+        }
+        else{
+            const divContainer = document.createElement("div");
+                const h2 = document.createElement("h2");
+                const p = document.createElement("p");
+                const b = document.createElement("b");
+                const imgContainer = document.createElement("div");
+                const img = document.createElement("img");
+                const pdiv = document.createElement("div");
+                const p2 = document.createElement("p")
+                const a = document.createElement("a");
+                const b2 = document.createElement("b");
+
+                divContainer.className = "verified";
+                h2.className = "h2";
+                p.className = "verified2";
+                imgContainer.className = "image";
+                img.className = "imgStyle";
+                pdiv.className = "pdiv";
+                a.className = "a"
+
+                // img.setAttribute("src", "../image/12.jpg");
+                a.setAttribute("href", "https://reactprojectburger-frontend.netlify.app/login")
+                
+                h2.appendChild(document.createTextNode('Verification Succesfull Please You Can Now Login'));
+                b.appendChild(document.createTextNode("verified"));
+                p2.appendChild(document.createTextNode("courtesy: @mayoyemiwa"));
+                b2.appendChild(document.createTextNode(">LOGIN"))
+
+                p.appendChild(b);
+                imgContainer.appendChild(img);
+                pdiv.appendChild(p2)
+                a.appendChild(b2);
+
+                divContainer.appendChild(h2);
+                divContainer.appendChild(p);
+                divContainer.appendChild(imgContainer)
+                divContainer.appendChild(pdiv);
+                divContainer.appendChild(a);
+                body.appendChild(divContainer);
+                console.log(body)
+        }
+    </script>
+</body>
+</html>

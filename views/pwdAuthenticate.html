@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>authentication</title>
+    <style type="text/css">
+     .body{width:100%; background-color:rgba(165, 170, 160, 0.863); margin:auto center;}
+     .verified{width: 450px; height:400px; margin:100px auto; align-content: center; border-radius: 30px; background-color:rgb(16, 238, 153); border: 2px rgb(21, 241, 40) solid;}
+     .h2{text-align: center; margin: 30px auto;}
+     .verified2{width:100px; height: 60px; border-radius: 50px; background-color: brown; padding-top:40px; text-align: center; color: antiquewhite; margin: auto;}
+     #a{display: block; text-align:center; cursor: pointer; margin: auto; padding: 10px 15px; border-radius: 7px }
+     .h1{text-align: center; margin-top: 80px;}
+    </style>
+</head>
+<body class="body">
+    <div class="verified">
+        <h2 class="h2">Authenticate please for your change of password</h2>
+        <p class="verified2">authenticate</p>
+        <p class="h1">courtesy: @mayoyemiwa</p>
+        <a href="https://reactprojectburger-frontend.netlify.app" id="a"><b>>AUTHENTICATE</b></a>>
+    </div>
+    <script>
+const {CURRENT_URL, CLIENT_URL} = process.env
+const toAuthenticate = () => {
+    console.log('myowa')
+    fetch(`${parseInt(CURRENT_URL) + '/api/pwdauthenticate'}`)
+ }
+
+ const button = document.getElementById('a')
+ button.attributes("href", `${CLIENT_URL +'/' + 'api/pwdreset'}`)
+//  button.attributes("href", "https://reactprojectburger-frontend.netlify.app/api/pwdreset")
+ button.addEventListener('click', toAuthenticate)
+
+    </script>
+</body>
+</html>
