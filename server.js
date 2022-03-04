@@ -11,7 +11,7 @@ const cors = require('cors');
 
 // process.env.CLIENT_URLL
 const app = express();
-app.use(express.static(path.join(__dirname, 'build')))
+// app.use(express.static(path.join(__dirname, 'build')))
 app.set('trust-proxy', 1)
 app.use(cors({domain:process.env.CURRENT_URL, origin: process.env.CLIENT_URL, methods:["GET", "POST"], credentials:true}));
 // app.use(cors({credentials:true, origin: process.env.CLIENT_URLA}));
@@ -46,9 +46,9 @@ mongoose.connect(process.env.MONGODB_URI,{
     console.log("connected to mongodb")
   })
 
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'))
-})
+// app.get('/*', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'build', 'index.html'))
+// })
 
 const PORT = process.env.PORT || 5000
 app.listen(PORT, () => { console.log(`Server is running on port`, PORT)})
