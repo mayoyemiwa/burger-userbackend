@@ -13,7 +13,7 @@ const cors = require('cors');
 const app = express();
 // app.use(express.static(path.join(__dirname, 'build')))
 app.set('trust-proxy', 1)
-app.use(cors({domain:process.env.CURRENT_URL, origin: process.env.CLIENT_URL, methods:["GET", "POST"], credentials:true}));
+app.use(cors({domain:process.env.CURRENT_URL, origin: process.env.CLIENT_URL, credentials:true}));
 // app.use(cors({credentials:true, origin: process.env.CLIENT_URLA}));
 app.use(express.json());
 app.use(cookieParser())
