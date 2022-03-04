@@ -89,7 +89,7 @@ module.exports.sendForgetPwdEmail = async({email}, res)=>{
         subject:"Change your password",
         html:`<p>Please click the link below to authenticate that this is you trying to change your password.</><p>This link 
         </p><p><b>press.</b><a href=${
-            currentUrl + 'api/user/pwdAuth'}>here</a> to proceed</p>`,
+            currentUrl + '/api/user/pwdAuth'}>here</a> to proceed</p>`,
     }
             try{
                 await smtpTransport.sendMail(mailOptions);

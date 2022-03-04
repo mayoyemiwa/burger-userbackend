@@ -19,7 +19,7 @@
         <h2 class="h2">Authenticate please for your change of password</h2>
         <p class="verified2">authenticate</p>
         <p class="h1">courtesy: @mayoyemiwa</p>
-        <a href="https://reactprojectburger-frontend.netlify.app" id="a"><b>>AUTHENTICATE</b></a>>
+        <a href="https://burger-userlogin.herokuapp.com" id="a"><b>>AUTHENTICATE</b></a>>
     </div>
     <script>
 const {CURRENT_URL, CLIENT_URL} = process.env
@@ -29,7 +29,7 @@ const toAuthenticate = () => {
  }
 
  const button = document.getElementById('a')
- button.attributes("href", `${CLIENT_URL +'/' + 'api/pwdreset'}`)
+ button.attributes("href", `${CLIENT_URL + '/api/pwdreset'}`)
 //  button.attributes("href", "https://reactprojectburger-frontend.netlify.app/api/pwdreset")
  button.addEventListener('click', toAuthenticate)
 
